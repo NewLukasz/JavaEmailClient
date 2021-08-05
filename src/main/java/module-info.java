@@ -6,6 +6,7 @@ module org.javaemailclinet {
 
     opens org.javaemailclinet to javafx.fxml;
     exports org.javaemailclinet;
-    exports org.javaemailclinet.view;
     opens org.javaemailclinet.view to javafx.fxml;
+    exports org.javaemailclinet.controller;
+    opens org.javaemailclinet.controller to javafx.fxml;
 }

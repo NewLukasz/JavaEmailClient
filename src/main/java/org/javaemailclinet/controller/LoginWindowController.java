@@ -1,4 +1,4 @@
-package org.javaemailclinet.view;
+package org.javaemailclinet.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
