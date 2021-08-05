@@ -1,0 +1,1 @@
+JavaEmailClient is application to manage your mailboxes.
