@@ -7,7 +7,7 @@ import javafx.scene.control.TextField;
 import org.javaemailclinet.EmailManager;
 import org.javaemailclinet.View.ViewFactory;
 
-public class LoginWindowController extends AbstractController {
+public class LoginWindowController extends BaseController {
 
     @FXML
     private TextField emailAddressField;

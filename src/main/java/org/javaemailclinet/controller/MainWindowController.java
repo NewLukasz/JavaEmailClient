@@ -7,7 +7,7 @@ import javafx.scene.web.WebView;
 import org.javaemailclinet.EmailManager;
 import org.javaemailclinet.View.ViewFactory;
 
-public class MainWindowController extends AbstractController {
+public class MainWindowController extends BaseController {
 
     @FXML
     private TreeView<?> emailsTreeView;
