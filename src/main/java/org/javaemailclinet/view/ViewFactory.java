@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 import org.javaemailclinet.EmailManager;
 import org.javaemailclinet.controller.BaseController;
 import org.javaemailclinet.controller.LoginWindowController;
+import org.javaemailclinet.controller.MainWindowController;
 
 import java.io.IOException;
 
@@ -19,10 +20,19 @@ public class ViewFactory {
 
     public void showLoginWindow(){
         System.out.println("Login windows - test");
-
         BaseController controller = new LoginWindowController(emailManager, this,"LoginWindow.fxml");
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(controller.getFXMLname()));
-        fxmlLoader.setController(controller);
+        initializeStage(controller);
+    }
+
+    public void showMainWindow(){
+        System.out.println("Main windows - test");
+        BaseController controller = new MainWindowController(emailManager, this,"MainWindow.fxml");
+        initializeStage(controller);
+    }
+
+    private void initializeStage(BaseController baseController){
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(baseController.getFXMLname()));
+        fxmlLoader.setController(baseController);
         Parent parent;
         try{
             parent = fxmlLoader.load();
@@ -31,11 +41,9 @@ public class ViewFactory {
             e.printStackTrace();
             return;
         }
-
         Scene scene = new Scene(parent);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
-
     }
 }
