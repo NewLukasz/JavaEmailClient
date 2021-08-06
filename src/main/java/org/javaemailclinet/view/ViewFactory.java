@@ -8,6 +8,7 @@ import org.javaemailclinet.EmailManager;
 import org.javaemailclinet.controller.BaseController;
 import org.javaemailclinet.controller.LoginWindowController;
 import org.javaemailclinet.controller.MainWindowController;
+import org.javaemailclinet.controller.OptionWindowController;
 
 import java.io.IOException;
 
@@ -27,6 +28,12 @@ public class ViewFactory {
     public void showMainWindow(){
         System.out.println("Main windows - test");
         BaseController controller = new MainWindowController(emailManager, this,"MainWindow.fxml");
+        initializeStage(controller);
+    }
+
+    public void showOptionWindow(){
+        System.out.println("Option window - test");
+        BaseController controller = new OptionWindowController(emailManager, this,"OptionsWindow.fxml");
         initializeStage(controller);
     }
 

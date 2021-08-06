@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TreeView;
 import javafx.scene.web.WebView;
+import javafx.stage.Stage;
 import org.javaemailclinet.EmailManager;
 import org.javaemailclinet.view.ViewFactory;
 
@@ -24,7 +25,10 @@ public class MainWindowController extends BaseController {
 
     @FXML
     void optionsAction() {
-
+        System.out.println("optionsAction()");
+        viewFactory.showOptionWindow();
+        Stage stage = (Stage)emailsTreeView.getScene().getWindow();
+        viewFactory.closeStage(stage);
     }
 
 }
