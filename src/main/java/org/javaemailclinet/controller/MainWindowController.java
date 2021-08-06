@@ -31,4 +31,10 @@ public class MainWindowController extends BaseController {
         viewFactory.closeStage(stage);
     }
 
+    @FXML
+    void addAccountAction() {
+        System.out.println("addAccountAction()");
+        viewFactory.showLoginWindow();
+    }
+
 }
