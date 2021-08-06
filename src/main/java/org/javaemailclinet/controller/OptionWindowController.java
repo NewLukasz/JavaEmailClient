@@ -5,8 +5,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Slider;
+import javafx.util.StringConverter;
 import org.javaemailclinet.EmailManager;
 import org.javaemailclinet.view.ColorTheme;
+import org.javaemailclinet.view.FontSize;
 import org.javaemailclinet.view.ViewFactory;
 
 import java.net.URL;
@@ -37,6 +39,34 @@ public class OptionWindowController extends BaseController implements Initializa
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setUpThemePicker();
+        setUpFontPicker();
+    }
+
+    private void setUpFontPicker() {
+        fontSizePicker.setMin(0);
+        fontSizePicker.setMax(FontSize.values().length-1);
+        fontSizePicker.setValue(viewFactory.getFontSize().ordinal());
+        fontSizePicker.setMajorTickUnit(1);
+        fontSizePicker.setMinorTickCount(0);
+        fontSizePicker.setBlockIncrement(1);
+        fontSizePicker.setSnapToTicks(true);
+        fontSizePicker.setShowTickMarks(true);
+        fontSizePicker.setShowTickLabels(true);
+        fontSizePicker.setLabelFormatter(new StringConverter<Double>() {
+            @Override
+            public String toString(Double object) {
+                int i=object.intValue();
+                return FontSize.values()[i].toString();
+            }
+
+            @Override
+            public Double fromString(String s) {
+                return null;
+            }
+        });
+        fontSizePicker.valueProperty().addListener((obs, oldVal, newVal)->{
+            fontSizePicker.setValue(newVal.intValue());
+        });
     }
 
     private void setUpThemePicker() {
