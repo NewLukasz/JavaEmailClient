@@ -12,12 +12,15 @@ import org.javaemailclinet.controller.MainWindowController;
 import org.javaemailclinet.controller.OptionWindowController;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class ViewFactory {
     private EmailManager emailManager;
+    private ArrayList<Stage> activeStages;
 
     public ViewFactory(EmailManager emailManager) {
         this.emailManager = emailManager;
+        activeStages = new ArrayList<Stage>();
     }
 
     //View options handling
@@ -73,9 +76,18 @@ public class ViewFactory {
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
+        activeStages.add(stage);
     }
 
     public void closeStage(Stage stageToClose){
         stageToClose.close();
+        activeStages.remove(stageToClose);
+    }
+
+    public void updateStyles() {
+        for(Stage stage: activeStages){
+            Scene scene = stage.getScene();
+            // handle CSS
+        }
     }
 }

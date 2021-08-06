@@ -33,7 +33,7 @@ public class OptionWindowController extends BaseController implements Initializa
         viewFactory.setFontSize(FontSize.values()[(int)(fontSizePicker.getValue())]);
         System.out.println(viewFactory.getColorTheme());
         System.out.println(viewFactory.getFontSize());
-
+        viewFactory.updateStyles();
     }
 
     @FXML
