@@ -7,7 +7,6 @@ public abstract class BaseController {
 
     private EmailManager emailManager;
     private ViewFactory viewFactory;
-
     private String fxmlName;
 
     public BaseController(EmailManager emailManager, ViewFactory viewFactory, String fxmlName) {
@@ -15,4 +14,8 @@ public abstract class BaseController {
         this.viewFactory = viewFactory;
         this.fxmlName = fxmlName;
     }
+
+    public String getFXMLname(){
+        return fxmlName;
+    };
 }
