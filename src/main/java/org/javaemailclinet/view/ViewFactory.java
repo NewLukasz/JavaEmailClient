@@ -3,7 +3,6 @@ package org.javaemailclinet.view;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import org.javaemailclinet.EmailManager;
 import org.javaemailclinet.controller.BaseController;
@@ -87,7 +86,10 @@ public class ViewFactory {
     public void updateStyles() {
         for(Stage stage: activeStages){
             Scene scene = stage.getScene();
-            // handle CSS
+            scene.getStylesheets().clear();
+            System.out.println(getClass().getResource(ColorTheme.getCssPath(colorTheme)));
+            scene.getStylesheets().add(getClass().getResource(ColorTheme.getCssPath(colorTheme)).toExternalForm());
+            scene.getStylesheets().add(getClass().getResource(FontSize.getCssPath(fontSize)).toExternalForm());
         }
     }
 }
