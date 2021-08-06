@@ -5,7 +5,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TreeView;
 import javafx.scene.web.WebView;
 import org.javaemailclinet.EmailManager;
-import org.javaemailclinet.View.ViewFactory;
+import org.javaemailclinet.view.ViewFactory;
 
 public class MainWindowController extends BaseController {
 

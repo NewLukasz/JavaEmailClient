@@ -5,7 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import org.javaemailclinet.EmailManager;
-import org.javaemailclinet.View.ViewFactory;
+import org.javaemailclinet.view.ViewFactory;
 
 public class LoginWindowController extends BaseController {
 
