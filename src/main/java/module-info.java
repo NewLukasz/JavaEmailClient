@@ -3,9 +3,9 @@ module org.javaemailclinet {
     requires javafx.controls;
     requires javafx.graphics;
     requires javafx.web;
+    requires activation;
+    requires java.mail;
 
-
-    opens org.javaemailclinet to javafx.fxml;
     exports org.javaemailclinet;
     opens org.javaemailclinet.view to javafx.fxml;
 
