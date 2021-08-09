@@ -1,6 +1,7 @@
 package org.javaemailclinet;
 
 import javafx.scene.control.TreeItem;
+import org.javaemailclinet.controller.services.FetchFolderService;
 import org.javaemailclinet.model.EmailAccount;
 import org.javaemailclinet.model.EmailTreeItem;
 
@@ -12,12 +13,10 @@ public class EmailManager {
     };
 
     public void addEmailAccount(EmailAccount emailAccount){
-        TreeItem<String> treeItem = new TreeItem<String>(emailAccount.getAddress());
+        EmailTreeItem<String> treeItem = new EmailTreeItem<String>(emailAccount.getAddress());
         treeItem.setExpanded(true);
-        treeItem.getChildren().add(new TreeItem<String>("Inbox"));
-        treeItem.getChildren().add(new TreeItem<String>("Sent"));
-        treeItem.getChildren().add(new TreeItem<String>("Folder1"));
-        treeItem.getChildren().add(new TreeItem<String>("SPAM"));
+        FetchFolderService fetchFolderService = new FetchFolderService(emailAccount.getStore(),treeItem);
+        fetchFolderService.start();
         foldersRoot.getChildren().add(treeItem);
     }
 }
