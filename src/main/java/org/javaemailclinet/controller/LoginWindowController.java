@@ -45,6 +45,14 @@ public class LoginWindowController extends BaseController implements Initializab
                         viewFactory.showMainWindow();
                         Stage stage = (Stage)errorLabel.getScene().getWindow();
                         viewFactory.closeStage(stage);
+                    case FAILED_BY_CREDENTIALS:
+                        errorLabel.setText("Invalid credentials");
+                        return;
+                    case FAILED_BY_UNEXPECTED_ERROR:
+                        errorLabel.setText("Unexpected error");
+                        return;
+                    default:
+                        return;
                 }
             });
 
