@@ -2,11 +2,12 @@ package org.javaemailclinet;
 
 import javafx.scene.control.TreeItem;
 import org.javaemailclinet.model.EmailAccount;
+import org.javaemailclinet.model.EmailTreeItem;
 
 public class EmailManager {
     //Folder handling:
-    private TreeItem<String> foldersRoot = new TreeItem<String>("");
-    public TreeItem<String> getFoldersRoot(){
+    private EmailTreeItem<String> foldersRoot = new EmailTreeItem<String>("");
+    public EmailTreeItem<String> getFoldersRoot(){
         return foldersRoot;
     };
 
