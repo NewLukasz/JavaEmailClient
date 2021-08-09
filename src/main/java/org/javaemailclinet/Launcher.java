@@ -22,6 +22,7 @@ public class Launcher extends Application {
         ViewFactory viewFactory = new ViewFactory(new EmailManager());
         viewFactory.showLoginWindow();
         //tests below
+        /*
         String host = "imap.gmail.com";
         String username = "user";
         String haslo = "passwd";
@@ -41,5 +42,7 @@ public class Launcher extends Application {
             e.printStackTrace();
         }
         System.out.println("TEST SIE ZAKONCZYL");
+
+         */
     }
 }
