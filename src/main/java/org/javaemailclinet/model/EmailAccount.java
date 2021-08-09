@@ -3,6 +3,7 @@ package org.javaemailclinet.model;
 import javax.mail.Store;
 import java.util.Properties;
 
+
 public class EmailAccount {
     private String address;
     private String password;
@@ -20,6 +21,9 @@ public class EmailAccount {
         properties.put("mail.smtps.host", "smtp.gmail.com");
         properties.put("mail.smtps.auth", "true");
         properties.put("outgoingHost", "smtp.gmail.com");
+
+
+
     }
 
     public String getAddress() {
