@@ -107,9 +107,7 @@ public class MainWindowController extends BaseController implements Initializabl
         recipientCol.setCellValueFactory(new PropertyValueFactory<EmailMessage,String>("recipient"));
         sizeCol.setCellValueFactory(new PropertyValueFactory<EmailMessage,Integer>("size"));
         dateCol.setCellValueFactory(new PropertyValueFactory<EmailMessage,Date>("date"));
-
-
-    }
+        }
 
     private void setUpEmailsTreeView() {
         emailsTreeView.setRoot(emailManager.getFoldersRoot());

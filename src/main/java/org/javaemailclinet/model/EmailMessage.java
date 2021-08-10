@@ -19,7 +19,7 @@ public class EmailMessage {
     public EmailMessage(String subject, String sender, String recipient, int size, Date date, boolean isRead, Message message){
         this.subject = new SimpleStringProperty(subject);
         this.sender = new SimpleStringProperty(sender);
-        this.sender = new SimpleStringProperty(recipient);
+        this.recipient = new SimpleStringProperty(recipient);
         this.size = new SimpleIntegerProperty(size);
         this.date = new SimpleObjectProperty<Date>(date);
         this.isRead = isRead;
