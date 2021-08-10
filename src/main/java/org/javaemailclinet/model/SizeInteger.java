@@ -1,6 +1,6 @@
 package org.javaemailclinet.model;
 
-public class SizeInteger {
+public class SizeInteger implements Comparable<SizeInteger>{
     private int size;
 
     public SizeInteger(int size) {
@@ -17,6 +17,17 @@ public class SizeInteger {
             return size/1024 + " kB";
         }else{
             return size/1048576 + " MB";
+        }
+    }
+
+    @Override
+    public int compareTo(SizeInteger o) {
+        if(size > o.size){
+            return 1;
+        }else if(o.size > size){
+            return -1;
+        }else{
+            return 0;
         }
     }
 }
