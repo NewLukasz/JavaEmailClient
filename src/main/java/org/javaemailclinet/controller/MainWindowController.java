@@ -11,6 +11,7 @@ import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import org.javaemailclinet.EmailManager;
+import org.javaemailclinet.controller.services.MessageRendererService;
 import org.javaemailclinet.model.EmailMessage;
 import org.javaemailclinet.model.EmailTreeItem;
 import org.javaemailclinet.model.SizeInteger;
@@ -27,6 +28,8 @@ public class MainWindowController extends BaseController implements Initializabl
 
     @FXML
     private WebView emailWebView;
+
+    private MessageRendererService messageRendererService;
 
     @FXML
     private TableView<EmailMessage> emailsTableView;
@@ -70,6 +73,22 @@ public class MainWindowController extends BaseController implements Initializabl
         setUpEmailsTableView();
         setUpFolderSelection();
         setUpBoldRows();
+        setUpMessageRenderService();
+        setUpMessageSelection();
+    }
+
+    private void setUpMessageSelection() {
+        emailsTableView.setOnMouseClicked(evetn ->{
+            EmailMessage emailMessage = emailsTableView.getSelectionModel().getSelectedItem();
+            if(emailMessage != null){
+                messageRendererService.setEmailMessage(emailMessage);
+                messageRendererService.restart();
+            }
+        });
+    }
+
+    private void setUpMessageRenderService() {
+        messageRendererService = new MessageRendererService(emailWebView.getEngine());
     }
 
     private void setUpBoldRows() {
