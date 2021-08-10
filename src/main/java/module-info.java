@@ -12,4 +12,5 @@ module org.javaemailclinet {
     exports org.javaemailclinet.controller;
     opens org.javaemailclinet.controller to javafx.fxml;
     exports org.javaemailclinet.view;
+    opens org.javaemailclinet.model;
 }
