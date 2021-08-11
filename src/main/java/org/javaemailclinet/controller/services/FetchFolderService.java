@@ -5,6 +5,7 @@ import javafx.concurrent.Task;
 import org.javaemailclinet.model.EmailTreeItem;
 
 import javax.mail.Folder;
+import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Store;
 import javax.mail.event.MessageCountEvent;
@@ -59,7 +60,14 @@ public class FetchFolderService extends Service<Void> {
         folder.addMessageCountListener(new MessageCountListener() {
             @Override
             public void messagesAdded(MessageCountEvent e) {
-                System.out.println("Message event added" + e);
+                for(int i=0;i < e.getMessages().length;i++){
+                    try {
+                        Message message = folder.getMessage(folder.getMessageCount()-i);
+                        emailTreeItem.addEmailToTop(message);
+                    } catch (MessagingException messagingException) {
+                        messagingException.printStackTrace();
+                    }
+                }
             }
 
             @Override
