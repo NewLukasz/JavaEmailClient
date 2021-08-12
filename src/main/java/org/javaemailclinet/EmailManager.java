@@ -2,12 +2,12 @@ package org.javaemailclinet;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.TreeItem;
-import org.javaemailclinet.controller.services.FetchFolderService;
+import org.javaemailclinet.controller.services.FetchFoldersService;
 import org.javaemailclinet.controller.services.FolderUpdaterService;
 import org.javaemailclinet.model.EmailAccount;
 import org.javaemailclinet.model.EmailMessage;
 import org.javaemailclinet.model.EmailTreeItem;
+import org.javaemailclinet.view.IconResolver;
 
 import javax.mail.Flags;
 import javax.mail.Folder;
@@ -19,6 +19,7 @@ public class EmailManager {
     private EmailMessage selectedMessage;
     private EmailTreeItem<String> selectedFolder;
     private ObservableList<EmailAccount> emailAccounts = FXCollections.observableArrayList();
+    private IconResolver iconResolver = new IconResolver();
 
     public ObservableList<EmailAccount> getEmailAccounts() {
         return emailAccounts;
@@ -58,9 +59,9 @@ public class EmailManager {
     public void addEmailAccount(EmailAccount emailAccount){
         emailAccounts.add(emailAccount);
         EmailTreeItem<String> treeItem = new EmailTreeItem<String>(emailAccount.getAddress());
-        treeItem.setExpanded(true);
-        FetchFolderService fetchFolderService = new FetchFolderService(emailAccount.getStore(),treeItem, folderList);
-        fetchFolderService.start();
+        treeItem.setGraphic(iconResolver.getIconForFolder(emailAccount.getAddress()));
+        FetchFoldersService fetchFoldersService = new FetchFoldersService(emailAccount.getStore(),treeItem, folderList);
+        fetchFoldersService.start();
         foldersRoot.getChildren().add(treeItem);
     }
 
