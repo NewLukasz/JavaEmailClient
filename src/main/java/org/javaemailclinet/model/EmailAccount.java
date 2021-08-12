@@ -10,6 +10,11 @@ public class EmailAccount {
     private Properties properties;
     private Store store;
 
+    @Override
+    public String toString() {
+        return address;
+    }
+
     public EmailAccount(String address, String password) {
         this.address = address;
         this.password = password;
