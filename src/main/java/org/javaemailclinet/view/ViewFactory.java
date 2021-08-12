@@ -5,10 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.javaemailclinet.EmailManager;
-import org.javaemailclinet.controller.BaseController;
-import org.javaemailclinet.controller.LoginWindowController;
-import org.javaemailclinet.controller.MainWindowController;
-import org.javaemailclinet.controller.OptionWindowController;
+import org.javaemailclinet.controller.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -63,6 +60,12 @@ public class ViewFactory {
     public void showOptionWindow(){
         System.out.println("Option window - test");
         BaseController controller = new OptionWindowController(emailManager, this,"OptionsWindow.fxml");
+        initializeStage(controller);
+    }
+
+    public void showComposeMessageWindow(){
+        System.out.println("Compose message window - test");
+        BaseController controller = new ComposeMessageController(emailManager, this,"ComposeMessageWindow.fxml");
         initializeStage(controller);
     }
 

@@ -21,28 +21,5 @@ public class Launcher extends Application {
     public void start(Stage stage) throws Exception {
         ViewFactory viewFactory = new ViewFactory(new EmailManager());
         viewFactory.showLoginWindow();
-        //tests below
-        /*
-        String host = "imap.gmail.com";
-        String username = "user";
-        String haslo = "passwd";
-        Properties props = new Properties();
-        props.setProperty("mail.imap.ssl.enable", "true");
-        // set any other needed mail.imap.* properties here
-        Session session = Session.getInstance(props);
-        Store store = null;
-        try {
-            store = session.getStore("imap");
-        } catch (NoSuchProviderException e) {
-            e.printStackTrace();
-        }
-        try {
-            store.connect(host, username, haslo);
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        }
-        System.out.println("TEST SIE ZAKONCZYL");
-
-         */
     }
 }
