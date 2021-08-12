@@ -12,13 +12,13 @@ import javax.mail.event.MessageCountEvent;
 import javax.mail.event.MessageCountListener;
 import java.util.List;
 
-public class FetchFolderService extends Service<Void> {
+public class FetchFoldersService extends Service<Void> {
 
     private Store store;
     private EmailTreeItem<String> foldersRoot;
     private List<Folder> folderList;
 
-    public FetchFolderService(Store store, EmailTreeItem<String> foldersRoot, List<Folder> folderList) {
+    public FetchFoldersService(Store store, EmailTreeItem<String> foldersRoot, List<Folder> folderList) {
         this.store=store;
         this.foldersRoot = foldersRoot;
         this.folderList = folderList;
