@@ -57,8 +57,6 @@ public class MainWindowController extends BaseController implements Initializabl
     void optionsAction() {
         System.out.println("optionsAction()");
         viewFactory.showOptionWindow();
-        Stage stage = (Stage)emailsTreeView.getScene().getWindow();
-        viewFactory.closeStage(stage);
     }
 
     @FXML

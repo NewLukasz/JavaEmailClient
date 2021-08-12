@@ -40,7 +40,6 @@ public class OptionWindowController extends BaseController implements Initializa
     void cancelButtonAction() {
         Stage stage = (Stage) fontSizePicker.getScene().getWindow();
         viewFactory.closeStage(stage);
-        viewFactory.showMainWindow();
     }
 
     @Override

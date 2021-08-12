@@ -59,10 +59,6 @@ public class LoginWindowController extends BaseController implements Initializab
             });
 
         }
-
-        //viewFactory.showMainWindow();
-        //Stage stage = (Stage)errorLabel.getScene().getWindow();
-        //viewFactory.closeStage(stage);
     }
 
     private boolean fieldAreValid() {
@@ -79,7 +75,6 @@ public class LoginWindowController extends BaseController implements Initializab
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        emailAddressField.setText("coursejava05");
-        //passwordField.setText("Tutaj podaj hasło");
+        emailAddressField.setText("coursejava05@gmail.com");
     }
 }
