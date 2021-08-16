@@ -5,6 +5,7 @@ module org.javaemailclinet {
     requires javafx.web;
     requires activation;
     requires java.mail;
+    requires java.desktop;
 
     exports org.javaemailclinet;
     opens org.javaemailclinet.view to javafx.fxml;
