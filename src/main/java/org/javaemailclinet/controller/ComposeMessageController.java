@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -39,6 +40,9 @@ public class ComposeMessageController extends BaseController implements Initiali
     private ChoiceBox<EmailAccount> emailAccountChoice;
 
     @FXML
+    private HBox attachListHBox;
+
+    @FXML
     void sendButtonAction() {
         EmailSenderService emailSenderService = new EmailSenderService(
                 emailAccountChoice.getValue(),
@@ -71,6 +75,9 @@ public class ComposeMessageController extends BaseController implements Initiali
         File selectedFile = fileChooser.showOpenDialog(null);
         if(selectedFile != null){
             attachments.add(selectedFile);
+            Label nameOfSelectedFile = new Label();
+            nameOfSelectedFile.setText(selectedFile.getName() + " ");
+            attachListHBox.getChildren().add(nameOfSelectedFile);
         }
     }
 

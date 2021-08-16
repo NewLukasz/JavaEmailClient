@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.web.HTMLEditor?>
 
 <AnchorPane prefHeight="579.0" prefWidth="634.0" styleClass="container" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
@@ -19,5 +20,6 @@
       <Label layoutX="31.0" layoutY="21.0" prefHeight="25.0" prefWidth="85.0" text="Account:" />
       <ChoiceBox fx:id="emailAccountChoice" layoutX="100.0" layoutY="21.0" prefHeight="26.0" prefWidth="514.0" />
       <Button layoutX="31.0" layoutY="127.0" mnemonicParsing="false" onAction="#attachButtonAction" text="Attach:" />
+      <HBox fx:id="attachListHBox" layoutX="105.0" layoutY="126.0" prefHeight="26.0" prefWidth="514.0" />
    </children>
 </AnchorPane>
